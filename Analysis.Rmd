@@ -13,16 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 When examining the improbable tragedy of the sinking of the Titanic in 1912, it is a reasonable assumption to believe that there was a predictable pattern to who on board survived and who died. It is my belief that women and younger passengers had a greater chance of surviving due to those groups taking priority when filling the lifeboats. A thorough analysis will be conducted to test this hypothesis.
 
-```{r cars}
-summary(cars)
+```{r, include = F}
+library(tidyverse)
+train_data <- read_csv('train.csv')
+```
+```{r}
+glimpse(train_data)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
