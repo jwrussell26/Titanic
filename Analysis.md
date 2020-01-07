@@ -13,6 +13,8 @@ surviving due to those groups taking priority when filling the
 lifeboats. A thorough analysis will be conducted to test this
 hypothesis.
 
+## Analysis
+
 ``` r
 glimpse(train_data)
 ```

@@ -16,8 +16,18 @@ When examining the improbable tragedy of the sinking of the Titanic in 1912, it 
 ```{r, include = F}
 library(tidyverse)
 train_data <- read_csv('train.csv')
+attach(train_data)
 ```
+
+## Analysis
 ```{r}
 glimpse(train_data)
 ```
 
+A quick look at the data shows that there are 891 passengers as well as 12 different variables, including whether or not the passenger survived.
+
+```{r}
+not_na <- train_data %>%
+  filter(!is.na(Age))
+```
+ We quickly notice that the Cabin number of passengers in rarely present, so we will omit this variable from the analysis. There are also some passengers whose age is not known, and as this is useful information to predicting who survived, we will remove these passengers from the model.
