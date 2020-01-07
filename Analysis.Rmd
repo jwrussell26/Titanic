@@ -9,11 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Introduction
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+When examining the improbable tragedy of the sinking of the Titanic in 1912, it is a reasonable assumption to believe that there was a predictable pattern to who on board survived and who died. It is my belief that women and younger passengers had a greater chance of surviving due to those groups taking priority when filling the lifeboats. A thorough analysis will be conducted to test this hypothesis.
 
 ```{r cars}
 summary(cars)
