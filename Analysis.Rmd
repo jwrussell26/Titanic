@@ -2,7 +2,7 @@
 title: "Titanic"
 author: "John Russell"
 date: "1/7/2020"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
