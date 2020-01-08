@@ -9,7 +9,7 @@ When examining the improbable tragedy of the sinking of the Titanic in
 1912, it is a reasonable assumption to believe that there was a
 predictable pattern to who on board survived and who died. It is my
 belief that women and younger passengers had a greater chance of
-surviving due to those groups taking priority when filling the
+surviving due to those groups likely taking priority when filling the
 lifeboats. A thorough analysis will be conducted to test this
 hypothesis.
 
@@ -33,3 +33,44 @@ glimpse(train_data)
     ## $ Fare        <dbl> 7.2500, 71.2833, 7.9250, 53.1000, 8.0500, 8.4583, 51.8625…
     ## $ Cabin       <chr> NA, "C85", NA, "C123", NA, NA, "E46", NA, NA, NA, "G6", "…
     ## $ Embarked    <chr> "S", "C", "S", "S", "S", "Q", "S", "S", "S", "C", "S", "S…
+
+A quick look at the data shows that there are 891 passengers as well as
+12 different variables, including whether or not the passenger survived.
+
+``` r
+train_data <- train_data %>%
+  select(-c(Cabin, Ticket))
+```
+
+We quickly notice that the Cabin number of passengers in rarely present,
+so we will omit this variable from the analysis as it does not provide
+any useful information.
+
+``` r
+ggplot(train_data) +
+  geom_bar(aes(Survived, fill = Sex, position = "fill"))
+```
+
+    ## Warning: Ignoring unknown aesthetics: position
+
+![](Analysis_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+A quick visualization of the data shows that the majority of the
+passengers that survived are, in fact, female.
+
+To properly examine age, it will be grouped as infant (0-5), child
+(6-12), teenager (13-19), young adult (20-29), adult (30-49), and
+elderly (50+). Passengers with unknown age will be ommitted.
+
+``` r
+train_data <- train_data %>%
+  filter(!is.na(Age)) %>%
+  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("infant", "child", "teenager", "young adult", "adult", "elderly")))
+```
+
+``` r
+ggplot(train_data) +
+  geom_bar(aes(Age_Group, fill = Age_Group))
+```
+
+![](Analysis_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
