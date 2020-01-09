@@ -16,7 +16,6 @@ When examining the improbable tragedy of the sinking of the Titanic in 1912, it 
 ```{r, include = F}
 library(tidyverse)
 train_data <- read_csv('train.csv')
-attach(train_data)
 ```
 
 ## Analysis
@@ -34,7 +33,7 @@ train_data <- train_data %>%
  
 ```{r}
 ggplot(train_data) +
-  geom_bar(aes(Survived, fill = Sex, position = "fill"))
+  geom_bar(aes(Survived, fill = Sex), position = "fill")
 ```
  
 A quick visualization of the data shows that the majority of the passengers that survived are, in fact, female. 
@@ -51,3 +50,16 @@ ggplot(train_data) +
   geom_bar(aes(Age_Group, fill = Age_Group))
 ```
 
+A percentage of survival based on age group will be more informative. 
+```{r}
+ by_age <- train_data %>%
+  group_by(Age_Group) %>%
+  summarise(prop_lived = sum(Survived == 1) / n()) 
+
+ggplot(by_age) +
+  geom_col(aes(Age_Group, prop_lived, fill = Age_Group))
+```
+
+Now that we have a proportion of who lived by age group, we can see that it is true that young passengers did indeed have a greater chance of surviving, likely due to priority on the life boats. 
+
+With a basic idea of what to expect from the graphs, it is time to start building a model to predict survival.

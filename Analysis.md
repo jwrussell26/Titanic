@@ -48,10 +48,8 @@ any useful information.
 
 ``` r
 ggplot(train_data) +
-  geom_bar(aes(Survived, fill = Sex, position = "fill"))
+  geom_bar(aes(Survived, fill = Sex), position = "fill")
 ```
-
-    ## Warning: Ignoring unknown aesthetics: position
 
 ![](Analysis_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
@@ -74,3 +72,23 @@ ggplot(train_data) +
 ```
 
 ![](Analysis_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+A percentage of survival based on age group will be more informative.
+
+``` r
+ by_age <- train_data %>%
+  group_by(Age_Group) %>%
+  summarise(prop_lived = sum(Survived == 1) / n()) 
+
+ggplot(by_age) +
+  geom_col(aes(Age_Group, prop_lived, fill = Age_Group))
+```
+
+![](Analysis_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+Now that we have a proportion of who lived by age group, we can see that
+it is true that young passengers did indeed have a greater chance of
+surviving, likely due to priority on the life boats.
+
+With a basic idea of what to expect from the graphs, it is time to start
+building a model to predict survival.
