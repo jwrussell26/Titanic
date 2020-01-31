@@ -13,7 +13,7 @@ surviving due to those groups likely taking priority when filling the
 lifeboats. A thorough analysis will be conducted to test this
 hypothesis.
 
-## Analysis
+## Data
 
 ``` r
 glimpse(train_data)
@@ -63,7 +63,7 @@ elderly (50+). Passengers with unknown age will be ommitted.
 ``` r
 train_data <- train_data %>%
   filter(!is.na(Age)) %>%
-  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("infant", "child", "teenager", "young adult", "adult", "elderly")))
+  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly")))
 ```
 
 ``` r
@@ -92,3 +92,10 @@ surviving, likely due to priority on the life boats.
 
 With a basic idea of what to expect from the graphs, it is time to start
 building a model to predict survival.
+
+## Model Selection
+
+Since we are dealing with a classification problem, we will consider a
+few different modeling methods: K nearest neighbors, logistic
+regression, linear discriminant analysis, and quadratic discriminant
+analysis.
