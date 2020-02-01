@@ -13,7 +13,7 @@ surviving due to those groups likely taking priority when filling the
 lifeboats. A thorough analysis will be conducted to test this
 hypothesis.
 
-## Data
+## Data and Feature Engineering
 
 ``` r
 glimpse(train_data)
@@ -44,7 +44,7 @@ train_data <- train_data %>%
 
 We quickly notice that the Cabin number of passengers in rarely present,
 so we will omit this variable from the analysis as it does not provide
-any useful information.
+any useful information for the prediction.
 
 ``` r
 ggplot(train_data) +
@@ -58,7 +58,26 @@ passengers that survived are, in fact, female.
 
 To properly examine age, it will be grouped as infant (0-5), child
 (6-12), teenager (13-19), young adult (20-29), adult (30-49), and
-elderly (50+). Passengers with unknown age will be ommitted.
+elderly (50+). Before we can group the passengers, we need to deal with
+the patients with no age recorded.
+
+``` r
+train_data %>%
+  mutate(Ageless = is.na(Age)) %>%
+  count(Ageless)
+```
+
+    ## # A tibble: 2 x 2
+    ##   Ageless     n
+    ##   <lgl>   <int>
+    ## 1 FALSE     714
+    ## 2 TRUE      177
+
+We see that there are 177 passengers that do not have a recorded age in
+the data set. In order to deal with this, we will use the other
+variables to find the most liekly age group for the passengers with no
+age and use the average value of that group to estimate the age. Because
+we are using age groups, the actual value is less important.
 
 ``` r
 train_data <- train_data %>%
@@ -71,7 +90,7 @@ ggplot(train_data) +
   geom_bar(aes(Age_Group, fill = Age_Group))
 ```
 
-![](Analysis_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](Analysis_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 A percentage of survival based on age group will be more informative.
 
@@ -84,7 +103,7 @@ ggplot(by_age) +
   geom_col(aes(Age_Group, prop_lived, fill = Age_Group))
 ```
 
-![](Analysis_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](Analysis_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 Now that we have a proportion of who lived by age group, we can see that
 it is true that young passengers did indeed have a greater chance of

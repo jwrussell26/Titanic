@@ -18,18 +18,19 @@ library(tidyverse)
 train_data <- read_csv('train.csv')
 ```
 
-## Data
+## Data and Feature Engineering
 ```{r}
 glimpse(train_data)
 ```
 
 A quick look at the data shows that there are 891 passengers as well as 12 different variables, including whether or not the passenger survived.
 
+
 ```{r}
 train_data <- train_data %>%
   select(-c(Cabin, Ticket))
 ```
- We quickly notice that the Cabin number of passengers in rarely present, so we will omit this variable from the analysis as it does not provide any useful information.
+ We quickly notice that the Cabin number of passengers in rarely present, so we will omit this variable from the analysis as it does not provide any useful information for the prediction.
  
 ```{r}
 ggplot(train_data) +
@@ -38,7 +39,13 @@ ggplot(train_data) +
  
 A quick visualization of the data shows that the majority of the passengers that survived are, in fact, female. 
 
-To properly examine age, it will be grouped as infant (0-5), child (6-12), teenager (13-19),  young adult (20-29), adult (30-49), and elderly (50+). Passengers with unknown age will be ommitted.
+To properly examine age, it will be grouped as infant (0-5), child (6-12), teenager (13-19),  young adult (20-29), adult (30-49), and elderly (50+). Before we can group the passengers, we need to deal with the patients with no age recorded. 
+```{r}
+train_data %>%
+  mutate(Ageless = is.na(Age)) %>%
+  count(Ageless)
+```
+We see that there are 177 passengers that do not have a recorded age in the data set. In order to deal with this, we will use the other variables to find the most liekly age group for the passengers with no age and use the average value of that group to estimate the age. Because we are using age groups, the actual value is less important.
 
 ```{r}
 train_data <- train_data %>%
