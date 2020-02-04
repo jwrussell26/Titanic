@@ -45,13 +45,35 @@ train_data %>%
   mutate(Ageless = is.na(Age)) %>%
   count(Ageless)
 ```
-We see that there are 177 passengers that do not have a recorded age in the data set. In order to deal with this, we will use the other variables to find the most liekly age group for the passengers with no age and use the average value of that group to estimate the age. Because we are using age groups, the actual value is less important.
+We see that there are 177 passengers that do not have a recorded age in the data set. In order to deal with this, we will use the other variables to find the most liekly age group for the passengers with no age and use the average value of that group to estimate the age. Because we are using age groups, the actual value is less important. 
 
 ```{r}
 train_data <- train_data %>%
-  filter(!is.na(Age)) %>%
   mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly")))
 ```
+
+```{r}
+train_data <- train_data %>%
+  mutate(Famsize = SibSp + Parch)
+
+find_age <- group_by(train_data, Pclass, Sex, Fare, Famsize) %>%
+  summarise(avg_age = mean(Age, na.rm = T))
+```
+ Now that we have an average age for passengers based on ticket class, gender, and the size of the family, we can assign this average age to the passengers with no recorded age. 
+
+```{r}
+train_data <- train_data %>%
+  inner_join(find_age)
+
+train_data %>%
+  count(is.na(avg_age))
+
+train_data <- train_data %>%
+  
+```
+
+Now we see that there are only 7 passengers that 
+
 ```{r}
 ggplot(train_data) +
   geom_bar(aes(Age_Group, fill = Age_Group))
