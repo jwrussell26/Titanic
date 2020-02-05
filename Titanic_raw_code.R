@@ -13,9 +13,6 @@ train_data %>%
   count(Ageless)
 
 train_data <- train_data %>%
-  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly")))
-
-train_data <- train_data %>%
   mutate(Famsize = SibSp + Parch)
 
 find_age <- group_by(train_data, Pclass, Sex, Famsize) %>%
@@ -32,3 +29,13 @@ for (i in 1:length(train_data$Age)){
     train_data$Age[i] <- train_data$Avg_age[i]
   }
 }
+
+train_data <- train_data %>%
+  select(-c(SibSp, Parch, Avg_age)) %>%
+  filter(!is.nan(Age)) %>%
+  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly")))
+
+train_data$Embarked <- factor(train_data$Embarked)
+
+cor(train_data[, -c(2, 4:5, 8, 10)])
+

@@ -46,16 +46,6 @@ We quickly notice that the Cabin number of passengers in rarely present,
 so we will omit this variable from the analysis as it does not provide
 any useful information for the prediction.
 
-``` r
-ggplot(train_data) +
-  geom_bar(aes(Survived, fill = Sex), position = "fill")
-```
-
-![](Analysis_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
-
-A quick visualization of the data shows that the majority of the
-passengers that survived are, in fact, female.
-
 To properly examine age, it will be grouped as infant (0-5), child
 (6-12), teenager (13-19), young adult (20-29), adult (30-49), and
 elderly (50+). Before we can group the passengers, we need to deal with
@@ -74,23 +64,112 @@ train_data %>%
     ## 2 TRUE      177
 
 We see that there are 177 passengers that do not have a recorded age in
-the data set. In order to deal with this, we will use the other
-variables to find the most liekly age group for the passengers with no
-age and use the average value of that group to estimate the age. Because
-we are using age groups, the actual value is less important.
+the data set. That is too many to just remove from the data set. In
+order to deal with this, we will use the other variables to find the
+most liekly age group for the passengers with no age and use the average
+value of that group to estimate the age. Because we are using age
+groups, the actual value is less important.
 
 ``` r
 train_data <- train_data %>%
-  filter(!is.na(Age)) %>%
-  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly")))
+  mutate(Famsize = SibSp + Parch)
+
+find_age <- group_by(train_data, Pclass, Sex, Fare, Famsize) %>%
+  summarise(Avg_age = mean(Age, na.rm = T))
 ```
+
+Now that we have an average age for passengers based on ticket class,
+gender, and the size of the family, we can assign this average age to
+the passengers with no recorded age.
+
+``` r
+train_data <- train_data %>%
+  inner_join(find_age)
+```
+
+    ## Joining, by = c("Pclass", "Sex", "Fare", "Famsize")
+
+``` r
+train_data %>%
+  count(is.na(Avg_age))
+```
+
+    ## # A tibble: 2 x 2
+    ##   `is.na(Avg_age)`     n
+    ##   <lgl>            <int>
+    ## 1 FALSE              816
+    ## 2 TRUE                75
+
+``` r
+for (i in 1:length(train_data$Age)){
+  if (is.na(train_data$Age[i])){
+    train_data$Age[i] <- train_data$Avg_age[i]
+  }
+}
+
+train_data %>%
+  count(is.nan(Age))
+```
+
+    ## # A tibble: 2 x 2
+    ##   `is.nan(Age)`     n
+    ##   <lgl>         <int>
+    ## 1 FALSE           816
+    ## 2 TRUE             75
+
+Now we see that there are only 7 passengers that are missing their age,
+and they all are part of the same family. We will remove these
+observations from the data set.
+
+Now that we have the ages accounted for, we can finish the featue
+engineering by creating the variable `Age_Group` and creating factors
+for `embarked`.
+
+``` r
+train_data <- train_data %>%
+  select(-c(SibSp, Parch, Avg_age)) %>%
+  filter(!is.nan(Age)) %>%
+  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly")))
+
+train_data$Embarked <- factor(train_data$Embarked)
+```
+
+We will save this updated training data set as a new CSV file.
+
+``` r
+write_csv(train_data, path = "tidy_titanic")
+```
+
+## Visualization
+
+Now that we have our variables transformed, we can start to examine the
+data. The first thing we will do is look at the correlation between the
+predictors.
+
+``` r
+cor(train_data[, -c(2, 4:5, 8, 10)])
+```
+
+    ##             PassengerId      Pclass         Age        Fare     Famsize
+    ## PassengerId  1.00000000 -0.04043922  0.04778875  0.01585238 -0.05063692
+    ## Pclass      -0.04043922  1.00000000 -0.37178418 -0.55066394  0.01640378
+    ## Age          0.04778875 -0.37178418  1.00000000  0.09248151 -0.29821436
+    ## Fare         0.01585238 -0.55066394  0.09248151  1.00000000  0.22690981
+    ## Famsize     -0.05063692  0.01640378 -0.29821436  0.22690981  1.00000000
+
+Most of what we see is expected. For example, the `Fare` is moderately
+negatively correlated with the `Pclass`, or ticket class. This means
+that the better the class (i.e. 1<sup>st</sup>) will have more expensive
+tickets. We now look at some graphs.
+
+A simple bar chart will show us the survival based on age group.
 
 ``` r
 ggplot(train_data) +
   geom_bar(aes(Age_Group, fill = Age_Group))
 ```
 
-![](Analysis_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](Analysis_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 A percentage of survival based on age group will be more informative.
 
@@ -103,18 +182,24 @@ ggplot(by_age) +
   geom_col(aes(Age_Group, prop_lived, fill = Age_Group))
 ```
 
-![](Analysis_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](Analysis_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 Now that we have a proportion of who lived by age group, we can see that
 it is true that young passengers did indeed have a greater chance of
-surviving, likely due to priority on the life boats.
+surviving, likely due to priority on the life boats. Now for gender.
 
-With a basic idea of what to expect from the graphs, it is time to start
-building a model to predict survival.
+Like with age, a simple bar chart will tell us a lot about how one group
+survives compared to the other.
+
+``` r
+ggplot(train_data) +
+  geom_bar(aes(Survived, fill = Sex), position = "fill")
+```
+
+![](Analysis_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 ## Model Selection
 
 Since we are dealing with a classification problem, we will consider a
-few different modeling methods: K nearest neighbors, logistic
-regression, linear discriminant analysis, and quadratic discriminant
-analysis.
+few different modeling methods: logistic regression, linear discriminant
+analysis, and quadratic discriminant analysis.
