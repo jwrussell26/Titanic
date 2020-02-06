@@ -137,7 +137,7 @@ train_data$Embarked <- factor(train_data$Embarked)
 We will save this updated training data set as a new CSV file.
 
 ``` r
-write_csv(train_data, path = "tidy_titanic")
+write_csv(train_data, path = "tidy_titanic.csv")
 ```
 
 ## Visualization

@@ -39,3 +39,13 @@ train_data$Embarked <- factor(train_data$Embarked)
 
 cor(train_data[, -c(2, 4:5, 8, 10)])
 
+ggplot(train_data) +
+  geom_bar(aes(Age_Group, fill = Age_Group))
+
+by_age <- train_data %>%
+  group_by(Age_Group) %>%
+  summarise(prop_lived = sum(Survived == 1) / n()) 
+
+ggplot(by_age) +
+  geom_col(aes(Age_Group, prop_lived, fill = Age_Group))
+
