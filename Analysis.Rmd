@@ -123,12 +123,25 @@ Now that we have a proportion of who lived by age group, we can see that it is t
 Like with age, a simple bar chart will tell us a lot about how one group survives compared to the other.
 
 ```{r}
-ggplot(train_data) +
-  geom_bar(aes(Survived, fill = Sex), position = "fill")
+by_sex <- train_data %>%
+  group_by(Sex) %>%
+  summarise(proportion_lived = sum(Survived == 1) / n())
+
+ggplot(by_sex) +
+  geom_col(aes(Sex, proportion_lived, fill = Sex))
 ```
+
+Gender is clearly a significant factor that determined which passengers survived. With both of these predictors analyzed visually, we can start building the model.
 
 ## Model Selection
 
-Since we are dealing with a classification problem, we will consider a few different modeling methods: logistic regression, linear discriminant analysis, and quadratic discriminant analysis. 
+Since we are dealing with a classification problem, we will consider a few different modeling methods: logistic regression, linear discriminant analysis, and quadratic discriminant analysis. Because we are dealing with a response that has two classes, logistic regression seems like a good place to start. For comparison's sake, We will be implementing the logisitc regression algorithm by hand and using the `glm` function provided in R.
 
+Let's start with the `glm` function:
+
+```{r}
+log_fit <- glm(Survived ~ Pclass + Sex + Fare + Embarked + Famsize + Age_Group, data = train_data, family = binomial)
+
+summary(log_fit)
+```
 

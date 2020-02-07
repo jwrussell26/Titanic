@@ -49,3 +49,17 @@ by_age <- train_data %>%
 ggplot(by_age) +
   geom_col(aes(Age_Group, prop_lived, fill = Age_Group))
 
+by_sex <- train_data %>%
+  group_by(Sex) %>%
+  summarise(proportion_lived = sum(Survived == 1) / n())
+
+ggplot(by_sex) +
+  geom_col(aes(Sex, proportion_lived, fill = Sex))
+
+
+log_fit <- glm(Survived ~ Pclass + Sex + Fare + Embarked + Famsize + Age_Group, data = train_data, family = binomial)
+
+summary(log_fit)
+
+
+

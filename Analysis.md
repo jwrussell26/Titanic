@@ -192,14 +192,70 @@ Like with age, a simple bar chart will tell us a lot about how one group
 survives compared to the other.
 
 ``` r
-ggplot(train_data) +
-  geom_bar(aes(Survived, fill = Sex), position = "fill")
+by_sex <- train_data %>%
+  group_by(Sex) %>%
+  summarise(proportion_lived = sum(Survived == 1) / n())
+
+ggplot(by_sex) +
+  geom_col(aes(Sex, proportion_lived, fill = Sex))
 ```
 
 ![](Analysis_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+Gender is clearly a significant factor that determined which passengers
+survived. With both of these predictors analyzed visually, we can start
+building the model.
 
 ## Model Selection
 
 Since we are dealing with a classification problem, we will consider a
 few different modeling methods: logistic regression, linear discriminant
-analysis, and quadratic discriminant analysis.
+analysis, and quadratic discriminant analysis. Because we are dealing
+with a response that has two classes, logistic regression seems like a
+good place to start. For comparison’s sake, We will be implementing the
+logisitc regression algorithm by hand and using the `glm` function
+provided in R.
+
+Let’s start with the `glm`
+function:
+
+``` r
+log_fit <- glm(Survived ~ Pclass + Sex + Fare + Embarked + Famsize + Age_Group, data = train_data, family = binomial)
+
+summary(log_fit)
+```
+
+    ## 
+    ## Call:
+    ## glm(formula = Survived ~ Pclass + Sex + Fare + Embarked + Famsize + 
+    ##     Age_Group, family = binomial, data = train_data)
+    ## 
+    ## Deviance Residuals: 
+    ##     Min       1Q   Median       3Q      Max  
+    ## -3.1850  -0.5850  -0.4354   0.5852   2.3781  
+    ## 
+    ## Coefficients:
+    ##                       Estimate Std. Error z value Pr(>|z|)    
+    ## (Intercept)           6.866291   0.742787   9.244  < 2e-16 ***
+    ## Pclass               -1.023584   0.154662  -6.618 3.64e-11 ***
+    ## Sexmale              -2.910850   0.221666 -13.132  < 2e-16 ***
+    ## Fare                  0.004642   0.003002   1.547  0.12196    
+    ## EmbarkedQ            -0.071573   0.444057  -0.161  0.87195    
+    ## EmbarkedS            -0.277691   0.255406  -1.087  0.27692    
+    ## Famsize              -0.400870   0.094793  -4.229 2.35e-05 ***
+    ## Age_GroupChild       -1.798776   0.686243  -2.621  0.00876 ** 
+    ## Age_GroupTeen        -2.811223   0.575931  -4.881 1.05e-06 ***
+    ## Age_GroupYoung Adult -2.922699   0.534063  -5.473 4.44e-08 ***
+    ## Age_GroupAdult       -2.951963   0.526509  -5.607 2.06e-08 ***
+    ## Age_GroupElderly     -3.724008   0.605905  -6.146 7.94e-10 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## (Dispersion parameter for binomial family taken to be 1)
+    ## 
+    ##     Null deviance: 1088.31  on 813  degrees of freedom
+    ## Residual deviance:  696.91  on 802  degrees of freedom
+    ##   (2 observations deleted due to missingness)
+    ## AIC: 720.91
+    ## 
+    ## Number of Fisher Scoring iterations: 5
