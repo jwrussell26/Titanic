@@ -268,7 +268,7 @@ removed.
 ``` r
 log_fit2 <- glm(Survived ~ Pclass + Sex + Fare + Famsize + Age_Group, data = train_data, family = binomial)
 
-summary(log_fit2)
+summary(log_fit2, correlation = T)
 ```
 
     ## 
@@ -302,3 +302,94 @@ summary(log_fit2)
     ## AIC: 718.53
     ## 
     ## Number of Fisher Scoring iterations: 5
+    ## 
+    ## Correlation of Coefficients:
+    ##                      (Intercept) Pclass Sexmale Fare  Famsize Age_GroupChild
+    ## Pclass               -0.60                                                  
+    ## Sexmale              -0.47        0.17                                      
+    ## Fare                 -0.24        0.53  -0.05                               
+    ## Famsize              -0.40       -0.12   0.33   -0.37                       
+    ## Age_GroupChild       -0.40       -0.01   0.11   -0.03  0.04                 
+    ## Age_GroupTeen        -0.69        0.00   0.27   -0.14  0.46    0.49         
+    ## Age_GroupYoung Adult -0.74        0.02   0.25   -0.14  0.49    0.52         
+    ## Age_GroupAdult       -0.79        0.12   0.22   -0.10  0.47    0.52         
+    ## Age_GroupElderly     -0.77        0.23   0.21   -0.07  0.43    0.46         
+    ##                      Age_GroupTeen Age_GroupYoung Adult Age_GroupAdult
+    ## Pclass                                                                
+    ## Sexmale                                                               
+    ## Fare                                                                  
+    ## Famsize                                                               
+    ## Age_GroupChild                                                        
+    ## Age_GroupTeen                                                         
+    ## Age_GroupYoung Adult  0.84                                            
+    ## Age_GroupAdult        0.83          0.90                              
+    ## Age_GroupElderly      0.74          0.80                 0.83
+
+All of the variables in this model are significant. But notice from the
+correlation of coefficient table that there is moderately strong
+correlation between `Pclass` and `Fare`. This makes since due to the
+fact that lower class tickets are generally more expensive. It thus
+makes sense for us to drop the least statistically signifant of the two
+variables, which is
+`Fare`.
+
+``` r
+log_fit3 <- glm(Survived ~ Pclass + Sex + Famsize + Age_Group, data = train_data, family = binomial)
+
+summary(log_fit3, correlation = T)
+```
+
+    ## 
+    ## Call:
+    ## glm(formula = Survived ~ Pclass + Sex + Famsize + Age_Group, 
+    ##     family = binomial, data = train_data)
+    ## 
+    ## Deviance Residuals: 
+    ##     Min       1Q   Median       3Q      Max  
+    ## -3.1015  -0.6028  -0.4316   0.5578   2.4545  
+    ## 
+    ## Coefficients:
+    ##                      Estimate Std. Error z value Pr(>|z|)    
+    ## (Intercept)           7.05267    0.69241  10.186  < 2e-16 ***
+    ## Pclass               -1.18378    0.12810  -9.241  < 2e-16 ***
+    ## Sexmale              -2.92477    0.21851 -13.385  < 2e-16 ***
+    ## Famsize              -0.35582    0.08594  -4.141 3.47e-05 ***
+    ## Age_GroupChild       -1.77440    0.68645  -2.585  0.00974 ** 
+    ## Age_GroupTeen        -2.68060    0.56493  -4.745 2.08e-06 ***
+    ## Age_GroupYoung Adult -2.82678    0.52403  -5.394 6.88e-08 ***
+    ## Age_GroupAdult       -2.90339    0.52042  -5.579 2.42e-08 ***
+    ## Age_GroupElderly     -3.69284    0.60116  -6.143 8.10e-10 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## (Dispersion parameter for binomial family taken to be 1)
+    ## 
+    ##     Null deviance: 1092.07  on 815  degrees of freedom
+    ## Residual deviance:  702.65  on 807  degrees of freedom
+    ## AIC: 720.65
+    ## 
+    ## Number of Fisher Scoring iterations: 5
+    ## 
+    ## Correlation of Coefficients:
+    ##                      (Intercept) Pclass Sexmale Famsize Age_GroupChild
+    ## Pclass               -0.58                                            
+    ## Sexmale              -0.49        0.22                                
+    ## Famsize              -0.54        0.10   0.35                         
+    ## Age_GroupChild       -0.42        0.00   0.11    0.02                 
+    ## Age_GroupTeen        -0.75        0.08   0.27    0.44    0.49         
+    ## Age_GroupYoung Adult -0.81        0.11   0.25    0.47    0.52         
+    ## Age_GroupAdult       -0.85        0.21   0.22    0.46    0.52         
+    ## Age_GroupElderly     -0.82        0.32   0.22    0.43    0.45         
+    ##                      Age_GroupTeen Age_GroupYoung Adult Age_GroupAdult
+    ## Pclass                                                                
+    ## Sexmale                                                               
+    ## Famsize                                                               
+    ## Age_GroupChild                                                        
+    ## Age_GroupTeen                                                         
+    ## Age_GroupYoung Adult  0.83                                            
+    ## Age_GroupAdult        0.83          0.90                              
+    ## Age_GroupElderly      0.74          0.80                 0.83
+
+Although the AIC of the model without `Fare` is slighlty higher than the
+model with it, it is not significant enough for us to keep `Fare` in the
+model. Thus the third fit is what we will be going with.

@@ -59,7 +59,7 @@ ggplot(by_sex) +
 
 log_fit <- glm(Survived ~ Pclass + Sex + Fare + Embarked + Famsize + Age_Group, data = train_data, family = binomial)
 
-summary(log_fit)
+summary(log_fit, correlation = T)
 
 log_fit2 <- glm(Survived ~ Pclass + Sex + Fare + Famsize + Age_Group, data = train_data, family = binomial)
 

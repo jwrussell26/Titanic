@@ -150,9 +150,16 @@ We see that most of the variables look like they are significant. The only excep
 ```{r}
 log_fit2 <- glm(Survived ~ Pclass + Sex + Fare + Famsize + Age_Group, data = train_data, family = binomial)
 
-summary(log_fit2)
+summary(log_fit2, correlation = T)
 ```
 
+All of the variables in this model are significant. But notice from the correlation of coefficient table that there is moderately strong correlation between `Pclass` and `Fare`. This makes since due to the fact that lower class tickets are generally more expensive. It thus makes sense for us to drop the least statistically signifant of the two variables, which is `Fare`.
 
+```{r}
+log_fit3 <- glm(Survived ~ Pclass + Sex + Famsize + Age_Group, data = train_data, family = binomial)
 
+summary(log_fit3, correlation = T)
+```
+
+Although the AIC of the model without `Fare` is slighlty higher than the model with it, it is not significant enough for us to keep `Fare` in the model. Thus the third fit is what we will be going with.
 
