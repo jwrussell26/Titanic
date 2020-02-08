@@ -259,3 +259,46 @@ summary(log_fit)
     ## AIC: 720.91
     ## 
     ## Number of Fisher Scoring iterations: 5
+
+We see that most of the variables look like they are significant. The
+only exception is the `Embarked` variable. In order to build the most
+accurate model, `Embarked` will be
+removed.
+
+``` r
+log_fit2 <- glm(Survived ~ Pclass + Sex + Fare + Famsize + Age_Group, data = train_data, family = binomial)
+
+summary(log_fit2)
+```
+
+    ## 
+    ## Call:
+    ## glm(formula = Survived ~ Pclass + Sex + Fare + Famsize + Age_Group, 
+    ##     family = binomial, data = train_data)
+    ## 
+    ## Deviance Residuals: 
+    ##     Min       1Q   Median       3Q      Max  
+    ## -3.2345  -0.5834  -0.4444   0.5672   2.4760  
+    ## 
+    ## Coefficients:
+    ##                       Estimate Std. Error z value Pr(>|z|)    
+    ## (Intercept)           6.693322   0.720378   9.291  < 2e-16 ***
+    ## Pclass               -1.024921   0.152348  -6.727 1.73e-11 ***
+    ## Sexmale              -2.932086   0.219725 -13.344  < 2e-16 ***
+    ## Fare                  0.005336   0.002991   1.784  0.07439 .  
+    ## Famsize              -0.417195   0.094374  -4.421 9.84e-06 ***
+    ## Age_GroupChild       -1.810054   0.688973  -2.627  0.00861 ** 
+    ## Age_GroupTeen        -2.815826   0.575231  -4.895 9.82e-07 ***
+    ## Age_GroupYoung Adult -2.953707   0.534566  -5.525 3.29e-08 ***
+    ## Age_GroupAdult       -2.992421   0.527304  -5.675 1.39e-08 ***
+    ## Age_GroupElderly     -3.743723   0.606412  -6.174 6.68e-10 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## (Dispersion parameter for binomial family taken to be 1)
+    ## 
+    ##     Null deviance: 1092.07  on 815  degrees of freedom
+    ## Residual deviance:  698.53  on 806  degrees of freedom
+    ## AIC: 718.53
+    ## 
+    ## Number of Fisher Scoring iterations: 5

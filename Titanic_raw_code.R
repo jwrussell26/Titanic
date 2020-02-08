@@ -61,5 +61,11 @@ log_fit <- glm(Survived ~ Pclass + Sex + Fare + Embarked + Famsize + Age_Group, 
 
 summary(log_fit)
 
+log_fit2 <- glm(Survived ~ Pclass + Sex + Fare + Famsize + Age_Group, data = train_data, family = binomial)
 
+summary(log_fit2)
+
+log_fit3 <- glm(Survived ~ Pclass + Sex + Famsize + Age_Group, data = train_data, family = binomial)
+
+summary(log_fit3)
 

@@ -145,3 +145,14 @@ log_fit <- glm(Survived ~ Pclass + Sex + Fare + Embarked + Famsize + Age_Group, 
 summary(log_fit)
 ```
 
+We see that most of the variables look like they are significant. The only exception is the `Embarked` variable. In order to build the most accurate model, `Embarked` will be removed.
+
+```{r}
+log_fit2 <- glm(Survived ~ Pclass + Sex + Fare + Famsize + Age_Group, data = train_data, family = binomial)
+
+summary(log_fit2)
+```
+
+
+
+
