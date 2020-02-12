@@ -23,7 +23,13 @@ train_data <- read_csv('train.csv')
 glimpse(train_data)
 ```
 
-A quick look at the data shows that there are 891 passengers as well as 12 different variables, including whether or not the passenger survived.
+```{r}
+train_data %>%
+  group_by(Survived) %>%
+  count()
+```
+
+A quick look at the data shows that there are 891 passengers as well as 12 different variables, including whether or not the passenger survived. We see that over half of the passengers are listed as having a 0 for the `Survived` variable, indicating that that passenger did not survive.
 
 
 ```{r}
@@ -161,5 +167,19 @@ log_fit3 <- glm(Survived ~ Pclass + Sex + Famsize + Age_Group, data = train_data
 summary(log_fit3, correlation = T)
 ```
 
-Although the AIC of the model without `Fare` is slighlty higher than the model with it, it is not significant enough for us to keep `Fare` in the model. Thus the third fit is what we will be going with.
+Although the AIC of the model without `Fare` is slighlty higher than the model with it, it is not significant enough for us to keep `Fare` in the model. Thus the third fit is what we will be going with. The coeeficients of the model are listed below.
+
+```{r}
+summary(log_fit3)$coef
+```
+
+Interestingly enough, every predictor appears to increase the odds of a passenger dying since they are all negative with the exception of the intercept. When we remember that the majority of the passengers did not survive, this is explainable.
+
+## Prediction
+
+Now that we have selected a model, it is time to make some predictions. We use the `predict` function in conjunction with the test data set to see whether a given passenger is likely to survive. First, we will tidy the test data in the same manner as the training data.
+
+```{r}
+test_data <- read_csv('test.csv')
+```
 

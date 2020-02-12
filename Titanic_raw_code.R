@@ -5,6 +5,10 @@ train_data <- read_csv('train.csv')
 
 glimpse(train_data)
 
+train_data %>%
+  group_by(Survived) %>%
+  count()
+
 train_data <- train_data %>%
   select(-c(Cabin, Ticket))
 
@@ -69,3 +73,42 @@ log_fit3 <- glm(Survived ~ Pclass + Sex + Famsize + Age_Group, data = train_data
 
 summary(log_fit3)
 
+
+
+test_data <- read_csv('test.csv')
+glimpse(test_data)
+
+test_data <- test_data %>%
+  select(-c(Cabin, Ticket))
+
+test_data %>%
+  mutate(Ageless = is.na(Age)) %>%
+  count(Ageless)
+
+test_data <- test_data %>%
+  mutate(Famsize = SibSp + Parch)
+
+test_age <- group_by(test_data, Pclass, Sex, Famsize) %>%
+  summarise(Avg_age = mean(Age, na.rm = T))
+
+test_data <- test_data %>%
+  inner_join(test_age)
+
+test_data %>%
+  count(is.na(Avg_age))
+
+for (i in 1:length(test_data$Age)){
+  if (is.na(test_data$Age[i])){
+    test_data$Age[i] <- test_data$Avg_age[i]
+  }
+}
+
+test_data <- test_data %>%
+  select(-c(SibSp, Parch, Avg_age, Name, Age, Fare, Embarked)) %>%
+  filter(!is.nan(Age))
+  
+
+write_csv(test_data, path = "tidy_test.csv")
+
+
+test_probs <- predict()

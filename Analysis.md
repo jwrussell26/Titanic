@@ -34,8 +34,23 @@ glimpse(train_data)
     ## $ Cabin       <chr> NA, "C85", NA, "C123", NA, NA, "E46", NA, NA, NA, "G6", "…
     ## $ Embarked    <chr> "S", "C", "S", "S", "S", "Q", "S", "S", "S", "C", "S", "S…
 
+``` r
+train_data %>%
+  group_by(Survived) %>%
+  count()
+```
+
+    ## # A tibble: 2 x 2
+    ## # Groups:   Survived [2]
+    ##   Survived     n
+    ##      <dbl> <int>
+    ## 1        0   549
+    ## 2        1   342
+
 A quick look at the data shows that there are 891 passengers as well as
 12 different variables, including whether or not the passenger survived.
+We see that over half of the passengers are listed as having a 0 for the
+`Survived` variable, indicating that that passenger did not survive.
 
 ``` r
 train_data <- train_data %>%
@@ -169,7 +184,7 @@ ggplot(train_data) +
   geom_bar(aes(Age_Group, fill = Age_Group))
 ```
 
-![](Analysis_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](Analysis_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 A percentage of survival based on age group will be more informative.
 
@@ -182,7 +197,7 @@ ggplot(by_age) +
   geom_col(aes(Age_Group, prop_lived, fill = Age_Group))
 ```
 
-![](Analysis_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](Analysis_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 Now that we have a proportion of who lived by age group, we can see that
 it is true that young passengers did indeed have a greater chance of
@@ -200,7 +215,7 @@ ggplot(by_sex) +
   geom_col(aes(Sex, proportion_lived, fill = Sex))
 ```
 
-![](Analysis_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](Analysis_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 Gender is clearly a significant factor that determined which passengers
 survived. With both of these predictors analyzed visually, we can start
@@ -392,4 +407,52 @@ summary(log_fit3, correlation = T)
 
 Although the AIC of the model without `Fare` is slighlty higher than the
 model with it, it is not significant enough for us to keep `Fare` in the
-model. Thus the third fit is what we will be going with.
+model. Thus the third fit is what we will be going with. The
+coeeficients of the model are listed
+    below.
+
+``` r
+summary(log_fit3)$coef
+```
+
+    ##                        Estimate Std. Error    z value     Pr(>|z|)
+    ## (Intercept)           7.0526653 0.69241076  10.185667 2.297793e-24
+    ## Pclass               -1.1837807 0.12809832  -9.241188 2.437749e-20
+    ## Sexmale              -2.9247735 0.21850887 -13.385148 7.385005e-41
+    ## Famsize              -0.3558243 0.08593701  -4.140524 3.465128e-05
+    ## Age_GroupChild       -1.7743952 0.68644519  -2.584904 9.740600e-03
+    ## Age_GroupTeen        -2.6805969 0.56492737  -4.745029 2.084762e-06
+    ## Age_GroupYoung Adult -2.8267752 0.52402716  -5.394330 6.877989e-08
+    ## Age_GroupAdult       -2.9033884 0.52042447  -5.578885 2.420649e-08
+    ## Age_GroupElderly     -3.6928410 0.60115914  -6.142868 8.104484e-10
+
+Interestingly enough, every predictor appears to increase the odds of a
+passenger dying since they are all negative with the exception of the
+intercept. When we remember that the majority of the passengers did not
+survive, this is explainable.
+
+## Prediction
+
+Now that we have selected a model, it is time to make some predictions.
+We use the `predict` function in conjunction with the test data set to
+see whether a given passenger is likely to survive. First, we will tidy
+the test data in the same manner as the training data.
+
+``` r
+test_data <- read_csv('test.csv')
+```
+
+    ## Parsed with column specification:
+    ## cols(
+    ##   PassengerId = col_double(),
+    ##   Pclass = col_double(),
+    ##   Name = col_character(),
+    ##   Sex = col_character(),
+    ##   Age = col_double(),
+    ##   SibSp = col_double(),
+    ##   Parch = col_double(),
+    ##   Ticket = col_character(),
+    ##   Fare = col_double(),
+    ##   Cabin = col_character(),
+    ##   Embarked = col_character()
+    ## )
