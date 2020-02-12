@@ -2,8 +2,10 @@
 
 library(tidyverse)
 train_data <- read_csv('train.csv')
+test_data <- read_csv('test.csv')
 
 glimpse(train_data)
+glimpse(test_data)
 
 train_data %>%
   group_by(Survived) %>%
@@ -75,9 +77,6 @@ summary(log_fit3)
 
 
 
-test_data <- read_csv('test.csv')
-glimpse(test_data)
-
 test_data <- test_data %>%
   select(-c(Cabin, Ticket))
 
@@ -104,11 +103,23 @@ for (i in 1:length(test_data$Age)){
 }
 
 test_data <- test_data %>%
-  select(-c(SibSp, Parch, Avg_age, Name, Age, Fare, Embarked)) %>%
-  filter(!is.nan(Age))
+  select(-c(SibSp, Parch, Avg_age, Name, Fare, Embarked)) %>%
+  filter(!is.nan(Age)) %>%
+  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly"))) %>%
+  select(-Age)
+ 
   
 
 write_csv(test_data, path = "tidy_test.csv")
 
 
-test_probs <- predict()
+test_probs <- predict(log_fit3, test_data, type = 'response')
+
+test_predict <- rep("0", 415)
+test_predict[test_probs > .5] = "1"
+
+log_final <- test_data %>%
+  mutate('pred' = test_predict) %>%
+  select(c(PassengerId, pred))
+
+write_csv(log_final, path = "log_regression_submit.csv")

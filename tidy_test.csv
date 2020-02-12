@@ -1,416 +1,416 @@
-PassengerId,Pclass,Name,Sex,Age,Fare,Embarked,Famsize
-892,3,"Kelly, Mr. James",male,34.5,7.8292,Q,0
-893,3,"Wilkes, Mrs. James (Ellen Needs)",female,47,7,S,1
-894,2,"Myles, Mr. Thomas Francis",male,62,9.6875,Q,0
-895,3,"Wirz, Mr. Albert",male,27,8.6625,S,0
-896,3,"Hirvonen, Mrs. Alexander (Helga E Lindqvist)",female,22,12.2875,S,2
-897,3,"Svensson, Mr. Johan Cervin",male,14,9.225,S,0
-898,3,"Connolly, Miss. Kate",female,30,7.6292,Q,0
-899,2,"Caldwell, Mr. Albert Francis",male,26,29,S,2
-900,3,"Abrahim, Mrs. Joseph (Sophie Halaut Easu)",female,18,7.2292,C,0
-901,3,"Davies, Mr. John Samuel",male,21,24.15,S,2
-902,3,"Ilieff, Mr. Ylio",male,26.594202898550726,7.8958,S,0
-903,1,"Jones, Mr. Charles Cresson",male,46,26,S,0
-904,1,"Snyder, Mrs. John Pillsbury (Nelle Stevenson)",female,23,82.2667,S,1
-905,2,"Howard, Mr. Benjamin",male,63,26,S,1
-906,1,"Chaffee, Mrs. Herbert Fuller (Carrie Constance Toogood)",female,47,61.175,S,1
-907,2,"del Carlo, Mrs. Sebastiano (Argenia Genovesi)",female,24,27.7208,C,1
-908,2,"Keane, Mr. Daniel",male,35,12.35,Q,0
-909,3,"Assaf, Mr. Gerios",male,21,7.225,C,0
-910,3,"Ilmakangas, Miss. Ida Livija",female,27,7.925,S,1
-911,3,"Assaf Khalil, Mrs. Mariana (Miriam"")""",female,45,7.225,C,0
-912,1,"Rothschild, Mr. Martin",male,55,59.4,C,1
-913,3,"Olsen, Master. Artur Karl",male,9,3.1708,S,1
-914,1,"Flegenheim, Mrs. Alfred (Antoinette)",female,39.375,31.6833,S,0
-915,1,"Williams, Mr. Richard Norris II",male,21,61.3792,C,1
-916,1,"Ryerson, Mrs. Arthur Larned (Emily Maria Borie)",female,48,262.375,C,4
-917,3,"Robins, Mr. Alexander A",male,50,14.5,S,1
-918,1,"Ostby, Miss. Helene Ragnhild",female,22,61.9792,C,1
-919,3,"Daher, Mr. Shedid",male,22.5,7.225,C,0
-920,1,"Brady, Mr. John Bertram",male,41,30.5,S,0
-921,3,"Samaan, Mr. Elias",male,12.842222222222222,21.6792,C,2
-922,2,"Louch, Mr. Charles Alexander",male,50,26,S,1
-923,2,"Jefferys, Mr. Clifford Thomas",male,24,31.5,S,2
-924,3,"Dean, Mrs. Bertram (Eva Georgetta Light)",female,33,20.575,S,3
-925,3,"Johnston, Mrs. Andrew G (Elizabeth Lily"" Watson)""",female,16.585,23.45,S,3
-926,1,"Mock, Mr. Philipp Edmund",male,30,57.75,C,1
-927,3,"Katavelas, Mr. Vassilios (Catavelas Vassilios"")""",male,18.5,7.2292,C,0
-928,3,"Roth, Miss. Sarah A",female,24.865384615384617,8.05,S,0
-929,3,"Cacic, Miss. Manda",female,21,8.6625,S,0
-930,3,"Sap, Mr. Julius",male,25,9.5,S,0
-931,3,"Hee, Mr. Ling",male,26.594202898550726,56.4958,S,0
-932,3,"Karun, Mr. Franz",male,39,13.4167,C,1
-933,1,"Franklin, Mr. Thomas Parham",male,39.46153846153846,26.55,S,0
-934,3,"Goldsmith, Mr. Nathan",male,41,7.85,S,0
-935,2,"Corbett, Mrs. Walter H (Irene Colvin)",female,30,13,S,0
-936,1,"Kimball, Mrs. Edwin Nelson Jr (Gertrude Parsons)",female,45,52.5542,S,1
-937,3,"Peltomaki, Mr. Nikolai Johannes",male,25,7.925,S,0
-938,1,"Chevre, Mr. Paul Romaine",male,45,29.7,C,0
-939,3,"Shaughnessy, Mr. Patrick",male,26.594202898550726,7.75,Q,0
-940,1,"Bucknell, Mrs. William Robert (Emma Eliza Ward)",female,60,76.2917,C,0
-941,3,"Coutts, Mrs. William (Winnie Minnie"" Treanor)""",female,36,15.9,S,2
-942,1,"Smith, Mr. Lucien Philip",male,24,60,S,1
-943,2,"Pulbaum, Mr. Franz",male,27,15.0333,C,0
-944,2,"Hocking, Miss. Ellen Nellie""""",female,20,23,S,3
-945,1,"Fortune, Miss. Ethel Flora",female,28,263,S,5
-946,2,"Mangiavacchi, Mr. Serafino Emilio",male,30.6125,15.5792,C,0
-947,3,"Rice, Master. Albert",male,10,29.125,Q,5
-948,3,"Cor, Mr. Bartol",male,35,7.8958,S,0
-949,3,"Abelseth, Mr. Olaus Jorgensen",male,25,7.65,S,0
-950,3,"Davison, Mr. Thomas Henry",male,24.66625,16.1,S,1
-951,1,"Chaudanson, Miss. Victorine",female,36,262.375,C,0
-952,3,"Dika, Mr. Mirko",male,17,7.8958,S,0
-953,2,"McCrae, Mr. Arthur Gordon",male,32,13.5,S,0
-954,3,"Bjorklund, Mr. Ernst Herbert",male,18,7.75,S,0
-955,3,"Bradley, Miss. Bridget Delia",female,22,7.725,Q,0
-956,1,"Ryerson, Master. John Borie",male,13,262.375,C,4
-957,2,"Corey, Mrs. Percy C (Mary Phyllis Elizabeth Miller)",female,23.666666666666668,21,S,0
-958,3,"Burns, Miss. Mary Delia",female,18,7.8792,Q,0
-959,1,"Moore, Mr. Clarence Bloomfield",male,47,42.4,S,0
-960,1,"Tucker, Mr. Gilbert Milligan Jr",male,31,28.5375,C,0
-961,1,"Fortune, Mrs. Mark (Mary McDougald)",female,60,263,S,5
-962,3,"Mulvihill, Miss. Bertha E",female,24,7.75,Q,0
-963,3,"Minkoff, Mr. Lazar",male,21,7.8958,S,0
-964,3,"Nieminen, Miss. Manta Josefina",female,29,7.925,S,0
-965,1,"Ovies y Rodriguez, Mr. Servando",male,28.5,27.7208,C,0
-966,1,"Geiger, Miss. Amalie",female,35,211.5,C,0
-967,1,"Keeping, Mr. Edwin",male,32.5,211.5,C,0
-968,3,"Miles, Mr. Frank",male,26.594202898550726,8.05,S,0
-969,1,"Cornell, Mrs. Robert Clifford (Malvina Helen Lamson)",female,55,25.7,S,2
-970,2,"Aldworth, Mr. Charles Augustus",male,30,13,S,0
-971,3,"Doyle, Miss. Elizabeth",female,24,7.75,Q,0
-972,3,"Boulos, Master. Akar",male,6,15.2458,C,2
-973,1,"Straus, Mr. Isidor",male,67,221.7792,S,1
-974,1,"Case, Mr. Howard Brown",male,49,26,S,0
-975,3,"Demetri, Mr. Marinko",male,26.594202898550726,7.8958,S,0
-976,2,"Lamb, Mr. John Joseph",male,30.6125,10.7083,Q,0
-977,3,"Khalil, Mr. Betros",male,24.66625,14.4542,C,1
-978,3,"Barry, Miss. Julia",female,27,7.8792,Q,0
-979,3,"Badman, Miss. Emily Louisa",female,18,8.05,S,0
-980,3,"O'Donoghue, Ms. Bridget",female,24.865384615384617,7.75,Q,0
-981,2,"Wells, Master. Ralph Lester",male,2,23,S,2
-982,3,"Dyker, Mrs. Adolf Fredrik (Anna Elisabeth Judith Andersson)",female,22,13.9,S,1
-983,3,"Pedersen, Mr. Olaf",male,26.594202898550726,7.775,S,0
-984,1,"Davidson, Mrs. Thornton (Orian Hays)",female,27,52,S,3
-985,3,"Guest, Mr. Robert",male,26.594202898550726,8.05,S,0
-986,1,"Birnbaum, Mr. Jakob",male,25,26,C,0
-987,3,"Tenglin, Mr. Gunnar Isidor",male,25,7.7958,S,0
-988,1,"Cavendish, Mrs. Tyrell William (Julia Florence Siegel)",female,76,78.85,S,1
-989,3,"Makinen, Mr. Kalle Edvard",male,29,7.925,S,0
-990,3,"Braf, Miss. Elin Ester Maria",female,20,7.8542,S,0
-991,3,"Nancarrow, Mr. William Henry",male,33,8.05,S,0
-992,1,"Stengel, Mrs. Charles Emil Henry (Annie May Morris)",female,43,55.4417,C,1
-993,2,"Weisz, Mr. Leopold",male,27,26,S,1
-994,3,"Foley, Mr. William",male,26.594202898550726,7.75,Q,0
-995,3,"Johansson Palmquist, Mr. Oskar Leander",male,26,7.775,S,0
-996,3,"Thomas, Mrs. Alexander (Thamine Thelma"")""",female,16,8.5167,C,2
-997,3,"Holthen, Mr. Johan Martin",male,28,22.525,S,0
-998,3,"Buckley, Mr. Daniel",male,21,7.8208,Q,0
-999,3,"Ryan, Mr. Edward",male,26.594202898550726,7.75,Q,0
-1000,3,"Willer, Mr. Aaron (Abi Weller"")""",male,26.594202898550726,8.7125,S,0
-1001,2,"Swane, Mr. George",male,18.5,13,S,0
-1002,2,"Stanton, Mr. Samuel Ward",male,41,15.0458,C,0
-1003,3,"Shine, Miss. Ellen Natalia",female,24.865384615384617,7.7792,Q,0
-1004,1,"Evans, Miss. Edith Corse",female,36,31.6792,C,0
-1005,3,"Buckley, Miss. Katherine",female,18.5,7.2833,Q,0
-1006,1,"Straus, Mrs. Isidor (Rosalie Ida Blun)",female,63,221.7792,S,1
-1007,3,"Chronopoulos, Mr. Demetrios",male,18,14.4542,C,1
-1008,3,"Thomas, Mr. John",male,26.594202898550726,6.4375,C,0
-1009,3,"Sandstrom, Miss. Beatrice Irene",female,1,16.7,S,2
-1010,1,"Beattie, Mr. Thomson",male,36,75.2417,C,0
-1011,2,"Chapman, Mrs. John Henry (Sara Elizabeth Lawry)",female,29,26,S,1
-1012,2,"Watt, Miss. Bertha J",female,12,15.75,S,0
-1013,3,"Kiernan, Mr. John",male,24.66625,7.75,Q,1
-1014,1,"Schabert, Mrs. Paul (Emma Mock)",female,35,57.75,C,1
-1015,3,"Carver, Mr. Alfred John",male,28,7.25,S,0
-1016,3,"Kennedy, Mr. John",male,26.594202898550726,7.75,Q,0
-1017,3,"Cribb, Miss. Laura Alice",female,17,16.1,S,1
-1018,3,"Brobeck, Mr. Karl Rudolf",male,22,7.7958,S,0
-1019,3,"McCoy, Miss. Alicia",female,16.846153846153847,23.25,Q,2
-1020,2,"Bowenur, Mr. Solomon",male,42,13,S,0
-1021,3,"Petersen, Mr. Marius",male,24,8.05,S,0
-1022,3,"Spinner, Mr. Henry John",male,32,8.05,S,0
-1023,1,"Gracie, Col. Archibald IV",male,53,28.5,C,0
-1025,3,"Thomas, Mr. Charles P",male,24.66625,6.4375,C,1
-1026,3,"Dintcheff, Mr. Valtcho",male,43,7.8958,S,0
-1027,3,"Carlsson, Mr. Carl Robert",male,24,7.8542,S,0
-1028,3,"Zakarian, Mr. Mapriededer",male,26.5,7.225,C,0
-1029,2,"Schmidt, Mr. August",male,26,13,S,0
-1030,3,"Drapkin, Miss. Jennie",female,23,8.05,S,0
-1031,3,"Goodwin, Mr. Charles Frederick",male,40,46.9,S,7
-1032,3,"Goodwin, Miss. Jessie Allis",female,10,46.9,S,7
-1033,1,"Daniels, Miss. Sarah",female,33,151.55,S,0
-1034,1,"Ryerson, Mr. Arthur Larned",male,61,262.375,C,4
-1035,2,"Beauchamp, Mr. Henry James",male,28,26,S,0
-1036,1,"Lindeberg-Lind, Mr. Erik Gustaf (Mr Edward Lingrey"")""",male,42,26.55,S,0
-1037,3,"Vander Planke, Mr. Julius",male,31,18,S,3
-1038,1,"Hilliard, Mr. Herbert Henry",male,39.46153846153846,51.8625,S,0
-1039,3,"Davies, Mr. Evan",male,22,8.05,S,0
-1040,1,"Crafton, Mr. John Bertram",male,39.46153846153846,26.55,S,0
-1041,2,"Lahtinen, Rev. William",male,30,26,S,2
-1042,1,"Earnshaw, Mrs. Boulton (Olive Potter)",female,23,83.1583,C,1
-1043,3,"Matinoff, Mr. Nicola",male,26.594202898550726,7.8958,C,0
-1044,3,"Storey, Mr. Thomas",male,60.5,NA,S,0
-1045,3,"Klasen, Mrs. (Hulda Kristina Eugenia Lofqvist)",female,36,12.1833,S,2
-1046,3,"Asplund, Master. Filip Oscar",male,13,31.3875,S,6
-1047,3,"Duquemin, Mr. Joseph",male,24,7.55,S,0
-1048,1,"Bird, Miss. Ellen",female,29,221.7792,S,0
-1049,3,"Lundin, Miss. Olga Elida",female,23,7.8542,S,0
-1050,1,"Borebank, Mr. John James",male,42,26.55,S,0
-1051,3,"Peacock, Mrs. Benjamin (Edith Nile)",female,26,13.775,S,2
-1052,3,"Smyth, Miss. Julia",female,24.865384615384617,7.7333,Q,0
-1053,3,"Touma, Master. Georges Youssef",male,7,15.2458,C,2
-1054,2,"Wright, Miss. Marion",female,26,13.5,S,0
-1055,3,"Pearce, Mr. Ernest",male,26.594202898550726,7,S,0
-1056,2,"Peruschitz, Rev. Joseph Maria",male,41,13,S,0
-1057,3,"Kink-Heilmann, Mrs. Anton (Luise Heilmann)",female,26,22.025,S,2
-1058,1,"Brandeis, Mr. Emil",male,48,50.4958,C,0
-1059,3,"Ford, Mr. Edward Watson",male,18,34.375,S,4
-1060,1,"Cassebeer, Mrs. Henry Arthur Jr (Eleanor Genevieve Fosdick)",female,39.375,27.7208,C,0
-1061,3,"Hellstrom, Miss. Hilda Maria",female,22,8.9625,S,0
-1062,3,"Lithman, Mr. Simon",male,26.594202898550726,7.55,S,0
-1063,3,"Zakarian, Mr. Ortin",male,27,7.225,C,0
-1064,3,"Dyker, Mr. Adolf Fredrik",male,23,13.9,S,1
-1065,3,"Torfa, Mr. Assad",male,26.594202898550726,7.2292,C,0
-1066,3,"Asplund, Mr. Carl Oscar Vilhelm Gustafsson",male,40,31.3875,S,6
-1067,2,"Brown, Miss. Edith Eileen",female,15,39,S,2
-1068,2,"Sincock, Miss. Maude",female,20,36.75,S,0
-1069,1,"Stengel, Mr. Charles Emil Henry",male,54,55.4417,C,1
-1070,2,"Becker, Mrs. Allen Oliver (Nellie E Baumgardner)",female,36,39,S,3
-1071,1,"Compton, Mrs. Alexander Taylor (Mary Eliza Ingersoll)",female,64,83.1583,C,2
-1072,2,"McCrie, Mr. James Matthew",male,30,13,S,0
-1073,1,"Compton, Mr. Alexander Taylor Jr",male,37,83.1583,C,2
-1074,1,"Marvin, Mrs. Daniel Warner (Mary Graham Carmichael Farquarson)",female,18,53.1,S,1
-1075,3,"Lane, Mr. Patrick",male,26.594202898550726,7.75,Q,0
-1076,1,"Douglas, Mrs. Frederick Charles (Mary Helene Baxter)",female,27,247.5208,C,2
-1077,2,"Maybery, Mr. Frank Hubert",male,40,16,S,0
-1078,2,"Phillips, Miss. Alice Frances Louisa",female,21,21,S,1
-1079,3,"Davies, Mr. Joseph",male,17,8.05,S,2
-1081,2,"Veal, Mr. James",male,40,13,S,0
-1082,2,"Angle, Mr. William A",male,34,26,S,1
-1083,1,"Salomon, Mr. Abraham L",male,39.46153846153846,26,S,0
-1084,3,"van Billiard, Master. Walter John",male,11.5,14.5,S,2
-1085,2,"Lingane, Mr. John",male,61,12.35,Q,0
-1086,2,"Drew, Master. Marshall Brines",male,8,32.5,S,2
-1087,3,"Karlsson, Mr. Julius Konrad Eugen",male,33,7.8542,S,0
-1088,1,"Spedden, Master. Robert Douglas",male,6,134.5,C,2
-1089,3,"Nilsson, Miss. Berta Olivia",female,18,7.775,S,0
-1090,2,"Baimbrigge, Mr. Charles Robert",male,23,10.5,S,0
-1091,3,"Rasmussen, Mrs. (Lena Jacobsen Solvang)",female,24.865384615384617,8.1125,S,0
-1092,3,"Murphy, Miss. Nora",female,24.865384615384617,15.5,Q,0
-1093,3,"Danbom, Master. Gilbert Sigvard Emanuel",male,0.33,14.4,S,2
-1094,1,"Astor, Col. John Jacob",male,47,227.525,C,1
-1095,2,"Quick, Miss. Winifred Vera",female,8,26,S,2
-1096,2,"Andrew, Mr. Frank Thomas",male,25,10.5,S,0
-1097,1,"Omont, Mr. Alfred Fernand",male,39.46153846153846,25.7417,C,0
-1098,3,"McGowan, Miss. Katherine",female,35,7.75,Q,0
-1099,2,"Collett, Mr. Sidney C Stuart",male,24,10.5,S,0
-1100,1,"Rosenbaum, Miss. Edith Louise",female,33,27.7208,C,0
-1101,3,"Delalic, Mr. Redjo",male,25,7.8958,S,0
-1102,3,"Andersen, Mr. Albert Karvin",male,32,22.525,S,0
-1103,3,"Finoli, Mr. Luigi",male,26.594202898550726,7.05,S,0
-1104,2,"Deacon, Mr. Percy William",male,17,73.5,S,0
-1105,2,"Howard, Mrs. Benjamin (Ellen Truelove Arman)",female,60,26,S,1
-1106,3,"Andersson, Miss. Ida Augusta Margareta",female,38,7.775,S,6
-1107,1,"Head, Mr. Christopher",male,42,42.5,S,0
-1108,3,"Mahon, Miss. Bridget Delia",female,24.865384615384617,7.8792,Q,0
-1109,1,"Wick, Mr. George Dennick",male,57,164.8667,S,2
-1110,1,"Widener, Mrs. George Dunton (Eleanor Elkins)",female,50,211.5,C,2
-1111,3,"Thomson, Mr. Alexander Morrison",male,26.594202898550726,8.05,S,0
-1112,2,"Duran y More, Miss. Florentina",female,30,13.8583,C,1
-1113,3,"Reynolds, Mr. Harold J",male,21,8.05,S,0
-1114,2,"Cook, Mrs. (Selena Rogers)",female,22,10.5,S,0
-1115,3,"Karlsson, Mr. Einar Gervasius",male,21,7.7958,S,0
-1116,1,"Candee, Mrs. Edward (Helen Churchill Hungerford)",female,53,27.4458,C,0
-1117,3,"Moubarek, Mrs. George (Omine Amenia"" Alexander)""",female,16.846153846153847,15.2458,C,2
-1118,3,"Asplund, Mr. Johan Charles",male,23,7.7958,S,0
-1119,3,"McNeill, Miss. Bridget",female,24.865384615384617,7.75,Q,0
-1120,3,"Everett, Mr. Thomas James",male,40.5,15.1,S,0
-1121,2,"Hocking, Mr. Samuel James Metcalfe",male,36,13,S,0
-1122,2,"Sweet, Mr. George Frederick",male,14,65,S,0
-1123,1,"Willard, Miss. Constance",female,21,26.55,S,0
-1124,3,"Wiklund, Mr. Karl Johan",male,21,6.4958,S,1
-1125,3,"Linehan, Mr. Michael",male,26.594202898550726,7.8792,Q,0
-1126,1,"Cumings, Mr. John Bradley",male,39,71.2833,C,1
-1127,3,"Vendel, Mr. Olof Edvin",male,20,7.8542,S,0
-1128,1,"Warren, Mr. Frank Manley",male,64,75.25,C,1
-1129,3,"Baccos, Mr. Raffull",male,20,7.225,C,0
-1130,2,"Hiltunen, Miss. Marta",female,18,13,S,2
-1131,1,"Douglas, Mrs. Walter Donald (Mahala Dutton)",female,48,106.425,C,1
-1132,1,"Lindstrom, Mrs. Carl Johan (Sigrid Posse)",female,55,27.7208,C,0
-1133,2,"Christy, Mrs. (Alice Frances)",female,45,30,S,2
-1134,1,"Spedden, Mr. Frederic Oakley",male,45,134.5,C,2
-1135,3,"Hyman, Mr. Abraham",male,26.594202898550726,7.8875,S,0
-1136,3,"Johnston, Master. William Arthur Willie""""",male,31,23.45,S,3
-1137,1,"Kenyon, Mr. Frederick R",male,41,51.8625,S,1
-1138,2,"Karnes, Mrs. J Frank (Claire Bennett)",female,22,21,S,0
-1139,2,"Drew, Mr. James Vivian",male,42,32.5,S,2
-1140,2,"Hold, Mrs. Stephen (Annie Margaret Hill)",female,29,26,S,1
-1141,3,"Khalil, Mrs. Betros (Zahie Maria"" Elias)""",female,29.571428571428573,14.4542,C,1
-1142,2,"West, Miss. Barbara J",female,0.92,27.75,S,3
-1143,3,"Abrahamsson, Mr. Abraham August Johannes",male,20,7.925,S,0
-1144,1,"Clark, Mr. Walter Miller",male,27,136.7792,C,1
-1145,3,"Salander, Mr. Karl Johan",male,24,9.325,S,0
-1146,3,"Wenzel, Mr. Linhart",male,32.5,9.5,S,0
-1147,3,"MacKay, Mr. George William",male,26.594202898550726,7.55,S,0
-1148,3,"Mahon, Mr. John",male,26.594202898550726,7.75,Q,0
-1149,3,"Niklasson, Mr. Samuel",male,28,8.05,S,0
-1150,2,"Bentham, Miss. Lilian W",female,19,13,S,0
-1151,3,"Midtsjo, Mr. Karl Albert",male,21,7.775,S,0
-1152,3,"de Messemaeker, Mr. Guillaume Joseph",male,36.5,17.4,S,1
-1153,3,"Nilsson, Mr. August Ferdinand",male,21,7.8542,S,0
-1154,2,"Wells, Mrs. Arthur Henry (Addie"" Dart Trevaskis)""",female,29,23,S,2
-1155,3,"Klasen, Miss. Gertrud Emilia",female,1,12.1833,S,2
-1156,2,"Portaluppi, Mr. Emilio Ilario Giuseppe",male,30,12.7375,C,0
-1157,3,"Lyntakoff, Mr. Stanko",male,26.594202898550726,7.8958,S,0
-1158,1,"Chisholm, Mr. Roderick Robert Crispin",male,39.46153846153846,0,S,0
-1159,3,"Warren, Mr. Charles William",male,26.594202898550726,7.55,S,0
-1160,3,"Howard, Miss. May Elizabeth",female,24.865384615384617,8.05,S,0
-1161,3,"Pokrnic, Mr. Mate",male,17,8.6625,S,0
-1162,1,"McCaffry, Mr. Thomas Francis",male,46,75.2417,C,0
-1163,3,"Fox, Mr. Patrick",male,26.594202898550726,7.75,Q,0
-1164,1,"Clark, Mrs. Walter Miller (Virginia McDowell)",female,26,136.7792,C,1
-1165,3,"Lennon, Miss. Mary",female,29.571428571428573,15.5,Q,1
-1166,3,"Saade, Mr. Jean Nassr",male,26.594202898550726,7.225,C,0
-1167,2,"Bryhl, Miss. Dagmar Jenny Ingeborg",female,20,26,S,1
-1168,2,"Parker, Mr. Clifford Richard",male,28,10.5,S,0
-1169,2,"Faunthorpe, Mr. Harry",male,40,26,S,1
-1170,2,"Ware, Mr. John James",male,30,21,S,1
-1171,2,"Oxenham, Mr. Percy Thomas",male,22,10.5,S,0
-1172,3,"Oreskovic, Miss. Jelka",female,23,8.6625,S,0
-1173,3,"Peacock, Master. Alfred Edward",male,0.75,13.775,S,2
-1174,3,"Fleming, Miss. Honora",female,24.865384615384617,7.75,Q,0
-1175,3,"Touma, Miss. Maria Youssef",female,9,15.2458,C,2
-1176,3,"Rosblom, Miss. Salli Helena",female,2,20.2125,S,2
-1177,3,"Dennis, Mr. William",male,36,7.25,S,0
-1178,3,"Franklin, Mr. Charles (Charles Fardon)",male,26.594202898550726,7.25,S,0
-1179,1,"Snyder, Mr. John Pillsbury",male,24,82.2667,S,1
-1180,3,"Mardirosian, Mr. Sarkis",male,26.594202898550726,7.2292,C,0
-1181,3,"Ford, Mr. Arthur",male,26.594202898550726,8.05,S,0
-1182,1,"Rheims, Mr. George Alexander Lucien",male,39.46153846153846,39.6,S,0
-1183,3,"Daly, Miss. Margaret Marcella Maggie""""",female,30,6.95,Q,0
-1184,3,"Nasr, Mr. Mustafa",male,26.594202898550726,7.2292,C,0
-1185,1,"Dodge, Dr. Washington",male,53,81.8583,S,2
-1186,3,"Wittevrongel, Mr. Camille",male,36,9.5,S,0
-1187,3,"Angheloff, Mr. Minko",male,26,7.8958,S,0
-1188,2,"Laroche, Miss. Louise",female,1,41.5792,C,3
-1189,3,"Samaan, Mr. Hanna",male,12.842222222222222,21.6792,C,2
-1190,1,"Loring, Mr. Joseph Holland",male,30,45.5,S,0
-1191,3,"Johansson, Mr. Nils",male,29,7.8542,S,0
-1192,3,"Olsson, Mr. Oscar Wilhelm",male,32,7.775,S,0
-1193,2,"Malachard, Mr. Noel",male,30.6125,15.0458,C,0
-1194,2,"Phillips, Mr. Escott Robert",male,43,21,S,1
-1195,3,"Pokrnic, Mr. Tome",male,24,8.6625,S,0
-1196,3,"McCarthy, Miss. Catherine Katie""""",female,24.865384615384617,7.75,Q,0
-1197,1,"Crosby, Mrs. Edward Gifford (Catherine Elizabeth Halstead)",female,64,26.55,S,2
-1198,1,"Allison, Mr. Hudson Joshua Creighton",male,30,151.55,S,3
-1199,3,"Aks, Master. Philip Frank",male,0.83,9.35,S,1
-1200,1,"Hays, Mr. Charles Melville",male,55,93.5,S,2
-1201,3,"Hansen, Mrs. Claus Peter (Jennie L Howard)",female,45,14.1083,S,1
-1202,3,"Cacic, Mr. Jego Grga",male,18,8.6625,S,0
-1203,3,"Vartanian, Mr. David",male,22,7.225,C,0
-1204,3,"Sadowitz, Mr. Harry",male,26.594202898550726,7.575,S,0
-1205,3,"Carr, Miss. Jeannie",female,37,7.75,Q,0
-1206,1,"White, Mrs. John Stuart (Ella Holmes)",female,55,135.6333,C,0
-1207,3,"Hagardon, Miss. Kate",female,17,7.7333,Q,0
-1208,1,"Spencer, Mr. William Augustus",male,57,146.5208,C,1
-1209,2,"Rogers, Mr. Reginald Harry",male,19,10.5,S,0
-1210,3,"Jonsson, Mr. Nils Hilding",male,27,7.8542,S,0
-1211,2,"Jefferys, Mr. Ernest Wilfred",male,22,31.5,S,2
-1212,3,"Andersson, Mr. Johan Samuel",male,26,7.775,S,0
-1213,3,"Krekorian, Mr. Neshan",male,25,7.2292,C,0
-1214,2,"Nesson, Mr. Israel",male,26,13,S,0
-1215,1,"Rowe, Mr. Alfred G",male,33,26.55,S,0
-1216,1,"Kreuchen, Miss. Emilie",female,39,211.3375,S,0
-1217,3,"Assam, Mr. Ali",male,23,7.05,S,0
-1218,2,"Becker, Miss. Ruth Elizabeth",female,12,39,S,3
-1219,1,"Rosenshine, Mr. George (Mr George Thorne"")""",male,46,79.2,C,0
-1220,2,"Clarke, Mr. Charles Valentine",male,29,26,S,1
-1221,2,"Enander, Mr. Ingvar",male,21,13,S,0
-1222,2,"Davies, Mrs. John Morgan (Elizabeth Agnes Mary White)",female,48,36.75,S,2
-1223,1,"Dulles, Mr. William Crothers",male,39,29.7,C,0
-1224,3,"Thomas, Mr. Tannous",male,26.594202898550726,7.225,C,0
-1225,3,"Nakid, Mrs. Said (Waika Mary"" Mowad)""",female,19,15.7417,C,2
-1226,3,"Cor, Mr. Ivan",male,27,7.8958,S,0
-1227,1,"Maguire, Mr. John Edward",male,30,26,S,0
-1228,2,"de Brito, Mr. Jose Joaquim",male,32,13,S,0
-1229,3,"Elias, Mr. Joseph",male,39,7.2292,C,2
-1230,2,"Denbury, Mr. Herbert",male,25,31.5,S,0
-1231,3,"Betros, Master. Seman",male,26.594202898550726,7.2292,C,0
-1232,2,"Fillbrook, Mr. Joseph Charles",male,18,10.5,S,0
-1233,3,"Lundstrom, Mr. Thure Edvin",male,32,7.5792,S,0
-1234,3,"Sage, Mr. John George",male,14.5,69.55,S,10
-1235,1,"Cardeza, Mrs. James Warburton Martinez (Charlotte Wardle Drake)",female,58,512.3292,C,1
-1236,3,"van Billiard, Master. James William",male,12.842222222222222,14.5,S,2
-1237,3,"Abelseth, Miss. Karen Marie",female,16,7.65,S,0
-1238,2,"Botsford, Mr. William Hull",male,26,13,S,0
-1239,3,"Whabee, Mrs. George Joseph (Shawneene Abi-Saab)",female,38,7.2292,C,0
-1240,2,"Giles, Mr. Ralph",male,24,13.5,S,0
-1241,2,"Walcroft, Miss. Nellie",female,31,21,S,0
-1242,1,"Greenfield, Mrs. Leo David (Blanche Strouse)",female,45,63.3583,C,1
-1243,2,"Stokes, Mr. Philip Joseph",male,25,10.5,S,0
-1244,2,"Dibden, Mr. William",male,18,73.5,S,0
-1245,2,"Herman, Mr. Samuel",male,49,65,S,3
-1246,3,"Dean, Miss. Elizabeth Gladys Millvina""""",female,0.17,20.575,S,3
-1247,1,"Julian, Mr. Henry Forbes",male,50,26,S,0
-1248,1,"Brown, Mrs. John Murray (Caroline Lane Lamson)",female,59,51.4792,S,2
-1249,3,"Lockyer, Mr. Edward",male,26.594202898550726,7.8792,S,0
-1250,3,"O'Keefe, Mr. Patrick",male,26.594202898550726,7.75,Q,0
-1251,3,"Lindell, Mrs. Edvard Bengtsson (Elin Gerda Persson)",female,30,15.55,S,1
-1252,3,"Sage, Master. William Henry",male,14.5,69.55,S,10
-1253,2,"Mallet, Mrs. Albert (Antoinette Magnin)",female,24,37.0042,C,2
-1254,2,"Ware, Mrs. John James (Florence Louise Long)",female,31,21,S,0
-1255,3,"Strilic, Mr. Ivan",male,27,8.6625,S,0
-1256,1,"Harder, Mrs. George Achilles (Dorothy Annan)",female,25,55.4417,C,1
-1258,3,"Caram, Mr. Joseph",male,24.66625,14.4583,C,1
-1259,3,"Riihivouri, Miss. Susanna Juhantytar Sanni""""",female,22,39.6875,S,0
-1260,1,"Gibson, Mrs. Leonard (Pauline C Boeson)",female,45,59.4,C,1
-1261,2,"Pallas y Castello, Mr. Emilio",male,29,13.8583,C,0
-1262,2,"Giles, Mr. Edgar",male,21,11.5,S,1
-1263,1,"Wilson, Miss. Helen Alice",female,31,134.5,C,0
-1264,1,"Ismay, Mr. Joseph Bruce",male,49,0,S,0
-1265,2,"Harbeck, Mr. William H",male,44,13,S,0
-1266,1,"Dodge, Mrs. Washington (Ruth Vidaver)",female,54,81.8583,S,2
-1267,1,"Bowen, Miss. Grace Scott",female,45,262.375,C,0
-1268,3,"Kink, Miss. Maria",female,22,8.6625,S,2
-1269,2,"Cotterill, Mr. Henry Harry""""",male,21,11.5,S,0
-1270,1,"Hipkins, Mr. William Edward",male,55,50,S,0
-1271,3,"Asplund, Master. Carl Edgar",male,5,31.3875,S,6
-1272,3,"O'Connor, Mr. Patrick",male,26.594202898550726,7.75,Q,0
-1273,3,"Foley, Mr. Joseph",male,26,7.8792,Q,0
-1274,3,"Risien, Mrs. Samuel (Emma)",female,24.865384615384617,14.5,S,0
-1275,3,"McNamee, Mrs. Neal (Eileen O'Leary)",female,19,16.1,S,1
-1276,2,"Wheeler, Mr. Edwin Frederick""""",male,30.6125,12.875,S,0
-1277,2,"Herman, Miss. Kate",female,24,65,S,3
-1278,3,"Aronsson, Mr. Ernst Axel Algot",male,24,7.775,S,0
-1279,2,"Ashby, Mr. John",male,57,13,S,0
-1280,3,"Canavan, Mr. Patrick",male,21,7.75,Q,0
-1281,3,"Palsson, Master. Paul Folke",male,6,21.075,S,4
-1282,1,"Payne, Mr. Vivian Ponsonby",male,23,93.5,S,0
-1283,1,"Lines, Mrs. Ernest H (Elizabeth Lindsey James)",female,51,39.4,S,1
-1284,3,"Abbott, Master. Eugene Joseph",male,13,20.25,S,2
-1285,2,"Gilbert, Mr. William",male,47,10.5,S,0
-1286,3,"Kink-Heilmann, Mr. Anton",male,29,22.025,S,4
-1287,1,"Smith, Mrs. Lucien Philip (Mary Eloise Hughes)",female,18,60,S,1
-1288,3,"Colbert, Mr. Patrick",male,24,7.25,Q,0
-1289,1,"Frolicher-Stehli, Mrs. Maxmillian (Margaretha Emerentia Stehli)",female,48,79.2,C,2
-1290,3,"Larsson-Rondberg, Mr. Edvard A",male,22,7.775,S,0
-1291,3,"Conlon, Mr. Thomas Henry",male,31,7.7333,Q,0
-1292,1,"Bonnell, Miss. Caroline",female,30,164.8667,S,0
-1293,2,"Gale, Mr. Harry",male,38,21,S,1
-1294,1,"Gibson, Miss. Dorothy Winifred",female,22,59.4,C,1
-1295,1,"Carrau, Mr. Jose Pedro",male,17,47.1,S,0
-1296,1,"Frauenthal, Mr. Isaac Gerald",male,43,27.7208,C,1
-1297,2,"Nourney, Mr. Alfred (Baron von Drachstedt"")""",male,20,13.8625,C,0
-1298,2,"Ware, Mr. William Jeffery",male,23,10.5,S,1
-1299,1,"Widener, Mr. George Dunton",male,50,211.5,C,2
-1300,3,"Riordan, Miss. Johanna Hannah""""",female,24.865384615384617,7.7208,Q,0
-1301,3,"Peacock, Miss. Treasteall",female,3,13.775,S,2
-1302,3,"Naughton, Miss. Hannah",female,24.865384615384617,7.75,Q,0
-1303,1,"Minahan, Mrs. William Edward (Lillian E Thorpe)",female,37,90,Q,1
-1304,3,"Henriksson, Miss. Jenny Lovisa",female,28,7.775,S,0
-1305,3,"Spector, Mr. Woolf",male,26.594202898550726,8.05,S,0
-1306,1,"Oliva y Ocana, Dona. Fermina",female,39,108.9,C,0
-1307,3,"Saether, Mr. Simon Sivertsen",male,38.5,7.25,S,0
-1308,3,"Ware, Mr. Frederick",male,26.594202898550726,8.05,S,0
-1309,3,"Peter, Master. Michael J",male,12.842222222222222,22.3583,C,2
+PassengerId,Pclass,Sex,Famsize,Age_Group
+892,3,male,0,Adult
+893,3,female,1,Adult
+894,2,male,0,Elderly
+895,3,male,0,Young Adult
+896,3,female,2,Young Adult
+897,3,male,0,Teen
+898,3,female,0,Adult
+899,2,male,2,Young Adult
+900,3,female,0,Teen
+901,3,male,2,Young Adult
+902,3,male,0,Young Adult
+903,1,male,0,Adult
+904,1,female,1,Young Adult
+905,2,male,1,Elderly
+906,1,female,1,Adult
+907,2,female,1,Young Adult
+908,2,male,0,Adult
+909,3,male,0,Young Adult
+910,3,female,1,Young Adult
+911,3,female,0,Adult
+912,1,male,1,Elderly
+913,3,male,1,Child
+914,1,female,0,Adult
+915,1,male,1,Young Adult
+916,1,female,4,Adult
+917,3,male,1,Elderly
+918,1,female,1,Young Adult
+919,3,male,0,Young Adult
+920,1,male,0,Adult
+921,3,male,2,Teen
+922,2,male,1,Elderly
+923,2,male,2,Young Adult
+924,3,female,3,Adult
+925,3,female,3,Teen
+926,1,male,1,Adult
+927,3,male,0,Teen
+928,3,female,0,Young Adult
+929,3,female,0,Young Adult
+930,3,male,0,Young Adult
+931,3,male,0,Young Adult
+932,3,male,1,Adult
+933,1,male,0,Adult
+934,3,male,0,Adult
+935,2,female,0,Adult
+936,1,female,1,Adult
+937,3,male,0,Young Adult
+938,1,male,0,Adult
+939,3,male,0,Young Adult
+940,1,female,0,Elderly
+941,3,female,2,Adult
+942,1,male,1,Young Adult
+943,2,male,0,Young Adult
+944,2,female,3,Young Adult
+945,1,female,5,Young Adult
+946,2,male,0,Adult
+947,3,male,5,Child
+948,3,male,0,Adult
+949,3,male,0,Young Adult
+950,3,male,1,Young Adult
+951,1,female,0,Adult
+952,3,male,0,Teen
+953,2,male,0,Adult
+954,3,male,0,Teen
+955,3,female,0,Young Adult
+956,1,male,4,Teen
+957,2,female,0,Young Adult
+958,3,female,0,Teen
+959,1,male,0,Adult
+960,1,male,0,Adult
+961,1,female,5,Elderly
+962,3,female,0,Young Adult
+963,3,male,0,Young Adult
+964,3,female,0,Young Adult
+965,1,male,0,Young Adult
+966,1,female,0,Adult
+967,1,male,0,Adult
+968,3,male,0,Young Adult
+969,1,female,2,Elderly
+970,2,male,0,Adult
+971,3,female,0,Young Adult
+972,3,male,2,Child
+973,1,male,1,Elderly
+974,1,male,0,Adult
+975,3,male,0,Young Adult
+976,2,male,0,Adult
+977,3,male,1,Young Adult
+978,3,female,0,Young Adult
+979,3,female,0,Teen
+980,3,female,0,Young Adult
+981,2,male,2,Infant
+982,3,female,1,Young Adult
+983,3,male,0,Young Adult
+984,1,female,3,Young Adult
+985,3,male,0,Young Adult
+986,1,male,0,Young Adult
+987,3,male,0,Young Adult
+988,1,female,1,Elderly
+989,3,male,0,Young Adult
+990,3,female,0,Young Adult
+991,3,male,0,Adult
+992,1,female,1,Adult
+993,2,male,1,Young Adult
+994,3,male,0,Young Adult
+995,3,male,0,Young Adult
+996,3,female,2,Teen
+997,3,male,0,Young Adult
+998,3,male,0,Young Adult
+999,3,male,0,Young Adult
+1000,3,male,0,Young Adult
+1001,2,male,0,Teen
+1002,2,male,0,Adult
+1003,3,female,0,Young Adult
+1004,1,female,0,Adult
+1005,3,female,0,Teen
+1006,1,female,1,Elderly
+1007,3,male,1,Teen
+1008,3,male,0,Young Adult
+1009,3,female,2,Infant
+1010,1,male,0,Adult
+1011,2,female,1,Young Adult
+1012,2,female,0,Child
+1013,3,male,1,Young Adult
+1014,1,female,1,Adult
+1015,3,male,0,Young Adult
+1016,3,male,0,Young Adult
+1017,3,female,1,Teen
+1018,3,male,0,Young Adult
+1019,3,female,2,Teen
+1020,2,male,0,Adult
+1021,3,male,0,Young Adult
+1022,3,male,0,Adult
+1023,1,male,0,Elderly
+1025,3,male,1,Young Adult
+1026,3,male,0,Adult
+1027,3,male,0,Young Adult
+1028,3,male,0,Young Adult
+1029,2,male,0,Young Adult
+1030,3,female,0,Young Adult
+1031,3,male,7,Adult
+1032,3,female,7,Child
+1033,1,female,0,Adult
+1034,1,male,4,Elderly
+1035,2,male,0,Young Adult
+1036,1,male,0,Adult
+1037,3,male,3,Adult
+1038,1,male,0,Adult
+1039,3,male,0,Young Adult
+1040,1,male,0,Adult
+1041,2,male,2,Adult
+1042,1,female,1,Young Adult
+1043,3,male,0,Young Adult
+1044,3,male,0,Elderly
+1045,3,female,2,Adult
+1046,3,male,6,Teen
+1047,3,male,0,Young Adult
+1048,1,female,0,Young Adult
+1049,3,female,0,Young Adult
+1050,1,male,0,Adult
+1051,3,female,2,Young Adult
+1052,3,female,0,Young Adult
+1053,3,male,2,Child
+1054,2,female,0,Young Adult
+1055,3,male,0,Young Adult
+1056,2,male,0,Adult
+1057,3,female,2,Young Adult
+1058,1,male,0,Adult
+1059,3,male,4,Teen
+1060,1,female,0,Adult
+1061,3,female,0,Young Adult
+1062,3,male,0,Young Adult
+1063,3,male,0,Young Adult
+1064,3,male,1,Young Adult
+1065,3,male,0,Young Adult
+1066,3,male,6,Adult
+1067,2,female,2,Teen
+1068,2,female,0,Young Adult
+1069,1,male,1,Elderly
+1070,2,female,3,Adult
+1071,1,female,2,Elderly
+1072,2,male,0,Adult
+1073,1,male,2,Adult
+1074,1,female,1,Teen
+1075,3,male,0,Young Adult
+1076,1,female,2,Young Adult
+1077,2,male,0,Adult
+1078,2,female,1,Young Adult
+1079,3,male,2,Teen
+1081,2,male,0,Adult
+1082,2,male,1,Adult
+1083,1,male,0,Adult
+1084,3,male,2,Child
+1085,2,male,0,Elderly
+1086,2,male,2,Child
+1087,3,male,0,Adult
+1088,1,male,2,Child
+1089,3,female,0,Teen
+1090,2,male,0,Young Adult
+1091,3,female,0,Young Adult
+1092,3,female,0,Young Adult
+1093,3,male,2,Infant
+1094,1,male,1,Adult
+1095,2,female,2,Child
+1096,2,male,0,Young Adult
+1097,1,male,0,Adult
+1098,3,female,0,Adult
+1099,2,male,0,Young Adult
+1100,1,female,0,Adult
+1101,3,male,0,Young Adult
+1102,3,male,0,Adult
+1103,3,male,0,Young Adult
+1104,2,male,0,Teen
+1105,2,female,1,Elderly
+1106,3,female,6,Adult
+1107,1,male,0,Adult
+1108,3,female,0,Young Adult
+1109,1,male,2,Elderly
+1110,1,female,2,Elderly
+1111,3,male,0,Young Adult
+1112,2,female,1,Adult
+1113,3,male,0,Young Adult
+1114,2,female,0,Young Adult
+1115,3,male,0,Young Adult
+1116,1,female,0,Elderly
+1117,3,female,2,Teen
+1118,3,male,0,Young Adult
+1119,3,female,0,Young Adult
+1120,3,male,0,Adult
+1121,2,male,0,Adult
+1122,2,male,0,Teen
+1123,1,female,0,Young Adult
+1124,3,male,1,Young Adult
+1125,3,male,0,Young Adult
+1126,1,male,1,Adult
+1127,3,male,0,Young Adult
+1128,1,male,1,Elderly
+1129,3,male,0,Young Adult
+1130,2,female,2,Teen
+1131,1,female,1,Adult
+1132,1,female,0,Elderly
+1133,2,female,2,Adult
+1134,1,male,2,Adult
+1135,3,male,0,Young Adult
+1136,3,male,3,Adult
+1137,1,male,1,Adult
+1138,2,female,0,Young Adult
+1139,2,male,2,Adult
+1140,2,female,1,Young Adult
+1141,3,female,1,Adult
+1142,2,female,3,Infant
+1143,3,male,0,Young Adult
+1144,1,male,1,Young Adult
+1145,3,male,0,Young Adult
+1146,3,male,0,Adult
+1147,3,male,0,Young Adult
+1148,3,male,0,Young Adult
+1149,3,male,0,Young Adult
+1150,2,female,0,Teen
+1151,3,male,0,Young Adult
+1152,3,male,1,Adult
+1153,3,male,0,Young Adult
+1154,2,female,2,Young Adult
+1155,3,female,2,Infant
+1156,2,male,0,Adult
+1157,3,male,0,Young Adult
+1158,1,male,0,Adult
+1159,3,male,0,Young Adult
+1160,3,female,0,Young Adult
+1161,3,male,0,Teen
+1162,1,male,0,Adult
+1163,3,male,0,Young Adult
+1164,1,female,1,Young Adult
+1165,3,female,1,Adult
+1166,3,male,0,Young Adult
+1167,2,female,1,Young Adult
+1168,2,male,0,Young Adult
+1169,2,male,1,Adult
+1170,2,male,1,Adult
+1171,2,male,0,Young Adult
+1172,3,female,0,Young Adult
+1173,3,male,2,Infant
+1174,3,female,0,Young Adult
+1175,3,female,2,Child
+1176,3,female,2,Infant
+1177,3,male,0,Adult
+1178,3,male,0,Young Adult
+1179,1,male,1,Young Adult
+1180,3,male,0,Young Adult
+1181,3,male,0,Young Adult
+1182,1,male,0,Adult
+1183,3,female,0,Adult
+1184,3,male,0,Young Adult
+1185,1,male,2,Elderly
+1186,3,male,0,Adult
+1187,3,male,0,Young Adult
+1188,2,female,3,Infant
+1189,3,male,2,Teen
+1190,1,male,0,Adult
+1191,3,male,0,Young Adult
+1192,3,male,0,Adult
+1193,2,male,0,Adult
+1194,2,male,1,Adult
+1195,3,male,0,Young Adult
+1196,3,female,0,Young Adult
+1197,1,female,2,Elderly
+1198,1,male,3,Adult
+1199,3,male,1,Infant
+1200,1,male,2,Elderly
+1201,3,female,1,Adult
+1202,3,male,0,Teen
+1203,3,male,0,Young Adult
+1204,3,male,0,Young Adult
+1205,3,female,0,Adult
+1206,1,female,0,Elderly
+1207,3,female,0,Teen
+1208,1,male,1,Elderly
+1209,2,male,0,Teen
+1210,3,male,0,Young Adult
+1211,2,male,2,Young Adult
+1212,3,male,0,Young Adult
+1213,3,male,0,Young Adult
+1214,2,male,0,Young Adult
+1215,1,male,0,Adult
+1216,1,female,0,Adult
+1217,3,male,0,Young Adult
+1218,2,female,3,Child
+1219,1,male,0,Adult
+1220,2,male,1,Young Adult
+1221,2,male,0,Young Adult
+1222,2,female,2,Adult
+1223,1,male,0,Adult
+1224,3,male,0,Young Adult
+1225,3,female,2,Teen
+1226,3,male,0,Young Adult
+1227,1,male,0,Adult
+1228,2,male,0,Adult
+1229,3,male,2,Adult
+1230,2,male,0,Young Adult
+1231,3,male,0,Young Adult
+1232,2,male,0,Teen
+1233,3,male,0,Adult
+1234,3,male,10,Teen
+1235,1,female,1,Elderly
+1236,3,male,2,Teen
+1237,3,female,0,Teen
+1238,2,male,0,Young Adult
+1239,3,female,0,Adult
+1240,2,male,0,Young Adult
+1241,2,female,0,Adult
+1242,1,female,1,Adult
+1243,2,male,0,Young Adult
+1244,2,male,0,Teen
+1245,2,male,3,Adult
+1246,3,female,3,Infant
+1247,1,male,0,Elderly
+1248,1,female,2,Elderly
+1249,3,male,0,Young Adult
+1250,3,male,0,Young Adult
+1251,3,female,1,Adult
+1252,3,male,10,Teen
+1253,2,female,2,Young Adult
+1254,2,female,0,Adult
+1255,3,male,0,Young Adult
+1256,1,female,1,Young Adult
+1258,3,male,1,Young Adult
+1259,3,female,0,Young Adult
+1260,1,female,1,Adult
+1261,2,male,0,Young Adult
+1262,2,male,1,Young Adult
+1263,1,female,0,Adult
+1264,1,male,0,Adult
+1265,2,male,0,Adult
+1266,1,female,2,Elderly
+1267,1,female,0,Adult
+1268,3,female,2,Young Adult
+1269,2,male,0,Young Adult
+1270,1,male,0,Elderly
+1271,3,male,6,Infant
+1272,3,male,0,Young Adult
+1273,3,male,0,Young Adult
+1274,3,female,0,Young Adult
+1275,3,female,1,Teen
+1276,2,male,0,Adult
+1277,2,female,3,Young Adult
+1278,3,male,0,Young Adult
+1279,2,male,0,Elderly
+1280,3,male,0,Young Adult
+1281,3,male,4,Child
+1282,1,male,0,Young Adult
+1283,1,female,1,Elderly
+1284,3,male,2,Teen
+1285,2,male,0,Adult
+1286,3,male,4,Young Adult
+1287,1,female,1,Teen
+1288,3,male,0,Young Adult
+1289,1,female,2,Adult
+1290,3,male,0,Young Adult
+1291,3,male,0,Adult
+1292,1,female,0,Adult
+1293,2,male,1,Adult
+1294,1,female,1,Young Adult
+1295,1,male,0,Teen
+1296,1,male,1,Adult
+1297,2,male,0,Young Adult
+1298,2,male,1,Young Adult
+1299,1,male,2,Elderly
+1300,3,female,0,Young Adult
+1301,3,female,2,Infant
+1302,3,female,0,Young Adult
+1303,1,female,1,Adult
+1304,3,female,0,Young Adult
+1305,3,male,0,Young Adult
+1306,1,female,0,Adult
+1307,3,male,0,Adult
+1308,3,male,0,Young Adult
+1309,3,male,2,Teen

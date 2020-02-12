@@ -227,12 +227,8 @@ Since we are dealing with a classification problem, we will consider a
 few different modeling methods: logistic regression, linear discriminant
 analysis, and quadratic discriminant analysis. Because we are dealing
 with a response that has two classes, logistic regression seems like a
-good place to start. For comparison’s sake, We will be implementing the
-logisitc regression algorithm by hand and using the `glm` function
-provided in R.
-
-Let’s start with the `glm`
-function:
+good place to
+start.
 
 ``` r
 log_fit <- glm(Survived ~ Pclass + Sex + Fare + Embarked + Famsize + Age_Group, data = train_data, family = binomial)

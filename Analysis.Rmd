@@ -141,9 +141,7 @@ Gender is clearly a significant factor that determined which passengers survived
 
 ## Model Selection
 
-Since we are dealing with a classification problem, we will consider a few different modeling methods: logistic regression, linear discriminant analysis, and quadratic discriminant analysis. Because we are dealing with a response that has two classes, logistic regression seems like a good place to start. For comparison's sake, We will be implementing the logisitc regression algorithm by hand and using the `glm` function provided in R.
-
-Let's start with the `glm` function:
+Since we are dealing with a classification problem, we will consider a few different modeling methods: logistic regression, linear discriminant analysis, and quadratic discriminant analysis. Because we are dealing with a response that has two classes, logistic regression seems like a good place to start.
 
 ```{r}
 log_fit <- glm(Survived ~ Pclass + Sex + Fare + Embarked + Famsize + Age_Group, data = train_data, family = binomial)
@@ -181,5 +179,49 @@ Now that we have selected a model, it is time to make some predictions. We use t
 
 ```{r}
 test_data <- read_csv('test.csv')
+
+test_data <- test_data %>%
+  select(-c(Cabin, Ticket))
+
+test_data %>%
+  mutate(Ageless = is.na(Age)) %>%
+  count(Ageless)
+
+test_data <- test_data %>%
+  mutate(Famsize = SibSp + Parch)
+
+test_age <- group_by(test_data, Pclass, Sex, Famsize) %>%
+  summarise(Avg_age = mean(Age, na.rm = T))
+
+test_data <- test_data %>%
+  inner_join(test_age)
+
+test_data %>%
+  count(is.na(Avg_age))
+
+for (i in 1:length(test_data$Age)){
+  if (is.na(test_data$Age[i])){
+    test_data$Age[i] <- test_data$Avg_age[i]
+  }
+}
+
+test_data <- test_data %>%
+  select(-c(SibSp, Parch, Avg_age, Name, Fare, Embarked)) %>%
+  filter(!is.nan(Age)) %>%
+  mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly"))) %>%
+  select(-Age)
+```
+
+With the test data tidy, we can begin with the predictions. 
+
+```{r}
+test_probs <- predict(log_fit3, test_data, type = 'response')
+
+test_predict <- rep("0", 415)
+test_predict[test_probs > .5] = "1"
+
+log_final <- test_data %>%
+  mutate('pred' = test_predict) %>%
+  select(c(PassengerId, pred))
 ```
 
