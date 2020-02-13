@@ -36,10 +36,13 @@ for (i in 1:length(train_data$Age)){
   }
 }
 
+
 train_data <- train_data %>%
   select(-c(SibSp, Parch, Avg_age)) %>%
-  filter(!is.nan(Age)) %>%
   mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly")))
+
+train_data %>%
+  count(is.na(Age_Group))
 
 train_data$Embarked <- factor(train_data$Embarked)
 
@@ -94,7 +97,7 @@ test_data <- test_data %>%
   inner_join(test_age)
 
 test_data %>%
-  count(is.na(Avg_age))
+  count(is.na(Avg_age)) 
 
 for (i in 1:length(test_data$Age)){
   if (is.na(test_data$Age[i])){
@@ -102,9 +105,10 @@ for (i in 1:length(test_data$Age)){
   }
 }
 
+
+
 test_data <- test_data %>%
   select(-c(SibSp, Parch, Avg_age, Name, Fare, Embarked)) %>%
-  filter(!is.nan(Age)) %>%
   mutate(Age_Group = cut(Age, breaks = c(0, 5, 12, 19, 29, 49, 80), labels = c("Infant", "Child", "Teen", "Young Adult", "Adult", "Elderly"))) %>%
   select(-Age)
  
@@ -115,11 +119,11 @@ write_csv(test_data, path = "tidy_test.csv")
 
 test_probs <- predict(log_fit3, test_data, type = 'response')
 
-test_predict <- rep("0", 415)
+test_predict <- rep("0", 418)
 test_predict[test_probs > .5] = "1"
 
 log_final <- test_data %>%
-  mutate('pred' = test_predict) %>%
-  select(c(PassengerId, pred))
+  mutate('Survived' = test_predict) %>%
+  select(c(PassengerId, Survived))
 
 write_csv(log_final, path = "log_regression_submit.csv")
